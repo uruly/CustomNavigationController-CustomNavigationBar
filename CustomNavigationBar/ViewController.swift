@@ -24,10 +24,19 @@ class ViewController: UIViewController {
         //これはダメ！！！！表示されない！！！
         //self.navigationController?.navigationItem.leftBarButtonItem = cancelBtn
         
+        //削除ボタンを作成してツールバーに乗せる
+        let trashBtn = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(self.trashTapped))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        self.toolbarItems = [flexible,trashBtn]
+        
     }
     
-    @objc func cancelTapped(){
+    @objc func cancelTapped() {
         print("キャンセル")
+    }
+    
+    @objc func trashTapped() {
+        print("ゴミ箱")
     }
 
     override func didReceiveMemoryWarning() {

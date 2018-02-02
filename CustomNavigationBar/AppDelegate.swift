@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let vc = ViewController()
-        let naviVC = CustomNavigationController(rootVC: vc, naviBarClass: CustomNavigationBar.self, toolbarClass: nil)
+        let naviVC = CustomNavigationController(rootVC: vc, naviBarClass: CustomNavigationBar.self, toolbarClass: CustomToolbar.self)
+        
         self.window!.rootViewController = naviVC
         
         return true

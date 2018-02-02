@@ -29,6 +29,9 @@ class CustomNavigationController: UINavigationController {
     convenience init(rootVC:UIViewController , naviBarClass:AnyClass?, toolbarClass: AnyClass?){
         self.init(navigationBarClass: naviBarClass, toolbarClass: toolbarClass)
         self.viewControllers = [rootVC]
+        if toolbarClass != nil {
+            self.setToolbarHidden(false, animated: false)
+        }
     }
     
     override func viewDidLoad() {

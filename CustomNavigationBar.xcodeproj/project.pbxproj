@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6623B828202507A300B8425C /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6623B827202507A300B8425C /* CustomToolbar.swift */; };
 		6656F05B2023EB0600756005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656F05A2023EB0600756005 /* AppDelegate.swift */; };
 		6656F05D2023EB0600756005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656F05C2023EB0600756005 /* ViewController.swift */; };
 		6656F0602023EB0600756005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6656F05E2023EB0600756005 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6623B827202507A300B8425C /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
 		6656F0572023EB0600756005 /* CustomNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6656F05A2023EB0600756005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6656F05C2023EB0600756005 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				6656F05C2023EB0600756005 /* ViewController.swift */,
 				6656F0882023EBBA00756005 /* CustomNavigationController.swift */,
 				6656F08A2023F30E00756005 /* CustomNavigationBar.swift */,
+				6623B827202507A300B8425C /* CustomToolbar.swift */,
 				6656F05E2023EB0600756005 /* Main.storyboard */,
 				6656F0612023EB0600756005 /* Assets.xcassets */,
 				6656F0632023EB0600756005 /* LaunchScreen.storyboard */,
@@ -267,6 +270,7 @@
 			files = (
 				6656F08B2023F30E00756005 /* CustomNavigationBar.swift in Sources */,
 				6656F05D2023EB0600756005 /* ViewController.swift in Sources */,
+				6623B828202507A300B8425C /* CustomToolbar.swift in Sources */,
 				6656F0892023EBBA00756005 /* CustomNavigationController.swift in Sources */,
 				6656F05B2023EB0600756005 /* AppDelegate.swift in Sources */,
 			);
