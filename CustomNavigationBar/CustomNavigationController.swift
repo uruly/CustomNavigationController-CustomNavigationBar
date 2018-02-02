@@ -36,6 +36,15 @@ class CustomNavigationController: UINavigationController {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if #available(iOS 11.0, *) {
+            print(self.view.safeAreaInsets)
+        }
+        //更新
+        self.navigationBar.setNeedsLayout()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -50,17 +50,27 @@ class CustomNavigationBar: UINavigationBar {
             for subview in self.subviews {
                 let stringFromClass = NSStringFromClass(subview.classForCoder)
                 if stringFromClass.contains("BarBackground") {
-                    //ステータスバー分あげないと余白ができる。
-                    let statusBarHeight = UIApplication.shared.statusBarFrame.height
-                    let point = CGPoint(x:0,y:-statusBarHeight)
                     //ここでバーの高さを調節 (sizeThatFitsを呼び出す)
-                    subview.frame = CGRect(origin: point, size: sizeThatFits(self.bounds.size))
+                    subview.frame = CGRect(origin: self.barOrigin(), size: sizeThatFits(self.bounds.size))
                 }else if stringFromClass.contains("BarContentView") {
                     //ここでサブビューの位置を調整
                     subview.frame.origin.y = addHeight
                 }
             }
         }
+    }
+    
+    @available(iOS 11.0, *)
+    func barOrigin() -> CGPoint {
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
+        //iPhoneXでステータスバー表示しない時に0.0だとセーフエリア分の隙間が空いてしまう
+        if let top = superview?.safeAreaInsets.top,
+            top != 0 && statusBarHeight == 0{
+            return CGPoint(x:0,y:-top)
+        }
+        //ステータスバーを表示・セーフエリアがないときはステータスバーの高さ分マイナスする。
+        return CGPoint(x:0,y:-statusBarHeight)
     }
 
 }
