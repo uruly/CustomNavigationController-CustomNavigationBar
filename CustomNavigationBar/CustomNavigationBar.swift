@@ -12,6 +12,7 @@ class CustomNavigationBar: UINavigationBar {
 
     //デフォルトよりどれだけ高くするか
     let addHeight:CGFloat = 18.0
+    //let addHeight:CGFloat = 60
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

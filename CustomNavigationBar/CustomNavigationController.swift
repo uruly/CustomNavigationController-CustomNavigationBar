@@ -36,7 +36,17 @@ class CustomNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //なぜかきかなくなる・・・
+        self.interactivePopGestureRecognizer?.isEnabled = true
         
+        //上記対処をdelegateでする
+        self.interactivePopGestureRecognizer?.delegate = self
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //なんでもいいから値をいれておくとアニメーションが直る
+        self.navigationBar.frame.size.height = 50
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,9 +58,17 @@ class CustomNavigationController: UINavigationController {
         self.navigationBar.setNeedsLayout()
     }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+}
+
+extension CustomNavigationController:UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard gestureRecognizer is UIScreenEdgePanGestureRecognizer else { return true }
+        return viewControllers.count > 1
+    }
 }
